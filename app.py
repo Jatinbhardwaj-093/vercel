@@ -24,9 +24,10 @@ def read_root():
     }
 
 @app.get("/api")
-def read_root(x: Optional[str] = None, y: Optional[str] = None):
-    xMarks = next((student["marks"] for student in students_data if student["name"] == x), None)
-    yMarks = next((student["marks"] for student in students_data if student["name"] == y), None)
+def read_api(x: Optional[str] = None, y: Optional[str] = None):
+    # Default to 0 if parameter is not provided or not found
+    xMarks = next((student["marks"] for student in students_data if student["name"] == x), 0)
+    yMarks = next((student["marks"] for student in students_data if student["name"] == y), 0)
     
     return {
         "marks": [
