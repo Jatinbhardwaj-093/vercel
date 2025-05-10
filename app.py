@@ -23,11 +23,7 @@ def read_api(x: Optional[str] = None, y: Optional[str] = None):
     xMarks = next((student["marks"] for student in students_data if student["name"] == x), 0)
     yMarks = next((student["marks"] for student in students_data if student["name"] == y), 0)
     
-    return {
-        "marks": [
-            xMarks, yMarks
-        ]
-    }
+    return {"marks": [xMarks, yMarks]}
     
 @app.get("/")
 def read_api(x: Optional[str] = None, y: Optional[str] = None):
@@ -35,8 +31,4 @@ def read_api(x: Optional[str] = None, y: Optional[str] = None):
     xMarks = next((student["marks"] for student in students_data if student["name"] == x), 0)
     yMarks = next((student["marks"] for student in students_data if student["name"] == y), 0)
     
-    return {
-        "marks": [
-            xMarks, yMarks
-        ]
-    }
+    return {"marks": [ xMarks, yMarks]}
